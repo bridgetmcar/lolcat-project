@@ -86,6 +86,11 @@ setInterval(updateClock, oneSecond);
 
 var lolcatButtonJS = document.getElementById("partyTimeButton");
 
+var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
+var lunchTimeSelector= document.getElementById("lunchTimeSelector");
+var napTimeSelector = document.getElementById("napTimeSelector");
+
+
 var partyEvent = function() {
         if (isPartyTime === false) {
         isPartyTime = true;
@@ -104,4 +109,25 @@ var partyEvent = function() {
   	lolcatButtonJS.style.backgroundColor = "#003399";
      }
   };
+
+
+var wakeUpEvent = function (){
+  wakeupTime = wakeUpTimeSelector.value;
+};
+
+
+var lunchTimeEvent = function (){
+  lunchTime = lunchTimeSelector.value;
+};
+
+
+var napTimeEvent = function (){
+  napTime = napTimeSelector.value;
+};
+
+
+lolcatButtonJS.addEventListener("click", partyEvent);
+wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
+lunchTimeSelector.addEventListener("change", lunchTimeEvent);
+napTimeSelector.addEventListener("change", napTimeEvent);
 lolcatButtonJS.addEventListener("click", partyEvent);
